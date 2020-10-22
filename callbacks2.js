@@ -32,6 +32,9 @@ let getEmpleado = (id, callback) => {
         callback(`No existe un empleado con el ID ${id}`)
     }else{
         callback(null, empleadoDB);//envío null porque no hubo ningún error
+        //callback(null, empleadoDB);//Si nos olvidamos que ya habíamos llamado el callback y lo volvemos a llamar, se vuelve a disparar
+        callback(null, empleadoDB);
+
     }
 }
 
@@ -53,7 +56,7 @@ let getSalario = (empleado, callback) => {
     }
 }
 
-getEmpleado(10, (err, empleado)=>{
+getEmpleado(1, (err, empleado)=>{
     
     if(err){
         return console.log(err);
