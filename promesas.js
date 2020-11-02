@@ -50,7 +50,6 @@ let getSalario = (empleado) => {
             // reject(`No se encontró un salario para el empleado ${empleado.nombre}`)
             // reject(`No se encontró un salario para el empleado ${empleado.nombre}`)
             // reject(`No se encontró un salario para el empleado ${empleado.nombre}`)
-            // reject(`No se encontró un salario para el empleado ${empleado.nombre}`)
             //Por más que me equivoque y repita el reject no se vuelve a disparar. Aunque el código sí se sigue ejecutando:
             console.log('Otra línea después.');
             //Si fuera un callback sí se vuelve a disparar.
@@ -74,3 +73,5 @@ getEmpleado(2).then(empleado => {
     }, (err)=>{
     console.log(err);
 });
+
+
