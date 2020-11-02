@@ -1,4 +1,3 @@
-
 let empleados = [{
     id: 1,
     nombre: 'Carolina'
@@ -64,13 +63,13 @@ let getSalario = (empleado) => {
     });
 }
 
-getEmpleado(2).then(empleado => {
-    //console.log('Empleado de BD', empleado);
-    getSalario(empleado).then(respuesta =>{
-        console.log(`El salario de ${respuesta.nombre} es de $ ${respuesta.salario}`);
-    }, (err) =>{
-        console.log(err);
-    }); 
-    }, (err)=>{
-    console.log(err);
-});
+getEmpleado(10).then(empleado => {
+    return getSalario(empleado);
+})
+.then(resp => {
+    console.log(`El salario de ${resp.nombre} es de $${resp.salario}`);
+})
+//Cuando alguna de las promesas anteriores falle, se va a capturar el error con un catch:
+.catch(error => {
+    console.log(error);
+})
